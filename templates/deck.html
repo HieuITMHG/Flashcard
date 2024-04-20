@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Inside Deck
+{% endblock %}
+
+{% block main %}
+<h1 style="text-align: center; display: block; top: 20%; left: 48%; position: fixed;">{{deckname}}</h1>
+    <div class="index-body">
+        <div id="box-container">
+            <div class="box" id="1">
+                <img src="{{ url_for('static', filename='box.png') }}" alt="box" class="box-img">
+                <p id="b1">Every day</p>
+            </div>
+            <div class="box" id="2">
+                <img src="{{ url_for('static', filename='box.png') }}" alt="box" class="box-img">
+                <p id="b2">once every 1 day</p>
+            </div>
+            <div class="box" id="3">
+                <img src="{{ url_for('static', filename='box.png') }}" alt="box" class="box-img">
+                <p id="b3">once every 2 days</p>
+            </div>
+            <div class="box" id="4">
+                <img src="{{ url_for('static', filename='box.png') }}" alt="box" class="box-img">
+                <p id="b4">once every 7 days</p>
+            </div>
+            <div class="box" id="5">
+                <img src="{{ url_for('static', filename='box.png') }}" alt="box" class="box-img">
+                <p id="b5">once every 14 days</p>
+            </div>
+        </div>
+        <div class="footer">
+            <button type="button"><a href="/" style="color: black; text-decoration: none;">Previous</a></button>
+            <form action="/addcardpage" method="post">
+                <button type="submit" name="deck_id" value="{{deck_id}}">Add Card</button>
+            </form>
+            <form action="/openbox" method="post">
+                <input type="hidden" name="box_id" id="box_id">
+                <input type="hidden" name="deck_id" value="{{deck_id}}">
+                <button type="button" name="openbox" id="openbox-btn">Open Box</button>
+            </form>
+            <form action="/learn" method="post">
+                <input type="hidden" value="{{deck_id}}" name="deck_id">
+                <input type="hidden" value="{{box_id}}" name="box_id">
+                <button type="submit" name="learn">Learn</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='deck-script.js') }}"></script>
+{% endblock %}

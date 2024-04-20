@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Add Cards
+{% endblock %}
+
+{% block main %}
+    <div id="x">
+        <form action="/openbox" method="post">
+            <input type="hidden" name="box_id" id="box_id" value="{{box_id}}">
+            <input type="hidden" name="deck_id" value="{{deck_id}}">
+            <button type="submit" name="openbox" id="openbox-btn">X</button>
+        </form>
+    </div>
+    <div id="addcard_container">
+        <form action="/edit" method="post" id="addform">
+            <label for="long-text" style="font-size: 22px;">Edit Card</label>
+            <textarea id="front" name="front" rows="12" cols="100" placeholder="Front Side" autofocus>{{front}}</textarea>
+            <textarea id="back" name="back" rows="12" cols="100" placeholder="Back side" autofocus>{{back}}</textarea>
+            <button type="submit" value="{{card_id}}" name="card_id">Submit</button>
+        </form>
+    </div>
+    
+{% endblock %}

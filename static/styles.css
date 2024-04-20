@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.container {
+    width: 500px;
+    height: 300px;
+    background-color: #f0f0f0;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container input,
+.container button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Make sure inputs and buttons take up full width */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.index-body {
+    height: calc(100vh - 56px);
+    width: 100vw;
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+#deck_container {
+    width: 100%;
+    height: 100%;
+}
+.footer {
+    height: 56px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    justify-content: space-around;
+}
+
+.footer button
+{
+    width: 80px;
+    height: 37.78px;
+    background-color: green;
+    border-radius: 10px;
+}
+
+.deck {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+}
+
+#deck-name {  
+    height: 30%;
+    width: 30%;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    position: absolute;
+    margin-left: 35%;
+}
+#deck-name form {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#deck-name form input{
+    margin-right: 10px;
+    height: 20%;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px;
+    box-sizing: border-box;
+}
+
+#deck-name form button {
+    height: 20%;
+    width: 20%;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #007bff;
+}
+
+.deck_envelop {
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.selected-deck {
+    border: 2px solid #007bff; /* Change the border color as needed */
+}
+
+#box-container {
+    height: calc(100vh - 56px);
+    width: 100vw;
+    margin-top: 56px;
+    display: flex;
+    margin-bottom: 56px;
+    justify-content:center;
+    align-items: center;
+}
+
+.box {
+    width: 300px;
+    height: 320px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-img {
+    width: 90%;
+    height: 90%;
+}
+
+#addcard_container {
+    width: 100vw;
+    height: calc(100vh - 56px);
+    margin-top: 56px;
+    display: flex;
+    justify-content: center;
+}
+
+#addform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#addform button {
+    width: 80px;
+    background-color: #007bff;
+    border-radius: 10px;
+}
+
+textarea {
+    border: 1px solid;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+#x {
+    background-color: red;
+    position: absolute;
+    left: 90%;
+    bottom: 80%;
+}
+#x button {
+    background-color: rgba(0, 0, 0, 0); /* Transparent black background */
+    border: 1px solid #333; /* Optional border for visibility */
+    color: #333; /* Text color */
+    padding: 10px 20px; /* Padding for button content */
+    cursor: pointer; /* Cursor style */
+    box-shadow:0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.insidebox-body {
+    height: calc(100vh - 56px);
+    width: 100vw;
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.display-card {
+    width: 100%;
+    height: 70%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.card {
+    width: 100%;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.front-text {
+    width: 70%;
+    height: 100%;
+}
+
+.card-btn {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-btn form {
+    width: 48%;
+    height: 100%;
+}
+
+.card-btn form button {
+    width: 100%;
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 10px;
+}
+
+.learn-body {
+    height: calc(100vh - 56px);
+    width: 100vw;
+    margin-top: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.front-container{
+    display: flex;
+    width: 50%;
+    height: 90%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.back-container {
+    display: none;
+    width: 50%;
+    height: 90%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#l-front, #l-back {
+    width: 100%;
+    height: 80%;
+    background-color: aliceblue;
+    box-shadow:0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.learn-body form {
+    width: 260px;
+    height: 50px;
+}
+
+.learn-body button {
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #007bff;
+}
+
+.learn-body form button {
+    width: 31%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #007bff;
+}
+
+.learn-btn {
+    display: flex;
+    width: 260px;
+    height: 50px;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.exit-deckname {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+    <div id="x">
+        <form action="/open" method="post" class="control-deck">
+            <button type="submit" name="open" value="{{deckname}}">X</button>
+        </form>
+    </div>
+    <div class="learn-body">
+        <div class="front-container">
+            <h2>Front</h2>
+            <div id="l-front">{{front}}</div>
+            <button id="show">Show</button>
+        </div>
+        <div class="back-container">
+            <h2>Back</h2>
+            <div id="l-back">{{back}}</div>
+            <form action="/learn2" method="post">
+                <input type="hidden" value="{{deck_id}}" name="deck_id">
+                <div class="learn-btn">
+                    <button type="submit" name="box_id" value="1">Hard</button>
+                    <button type="submit" name="box_id" value="{{box_id+1}}">Normal</button>
+                    <button type="submit" name="box_id" value="5">Easy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='learn-script.js') }}"></script>
+{% endblock %}

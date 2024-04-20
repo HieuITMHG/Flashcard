@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block main %}  
+<div id="deck-name">
+    <div id="x">
+        <button type="button">X</button>
+    </div>
+    <form action="/add" method="post">
+        <input type="text" autofocus name="deck_name" id="deck_name" placeholder="Enter Deckname">
+        <button type="submit" id="deck-name-btn">Submit</button>
+    </form>
+</div>
+<div class="index-body">
+    <div id="deck_container">
+        {% for deck in decks %}
+        <div class="deck_envelop">
+            <img src="{{ url_for('static', filename='folder.png') }}" alt="{{deck}}" class="deck">
+            <p id="name">{{deck}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="footer">
+        <button id="create-deck"  type="submit">New</button>
+        <form action="/" method="get" class="control-deck">
+            <button type="submit" class="ctrl-btn" name="delete">Delete</button>
+        </form>
+        <form action="/" method="get" class="control-deck">
+            <button type="submit" class="ctrl-btn" name="open">Open</button>
+        </form>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

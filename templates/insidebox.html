@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Inside box
+{% endblock %}
+
+{% block main %}
+    <div class="insidebox-body">
+        <div id="x">
+            <form action="/open" method="post" class="control-deck">
+                <button type="submit" name="open" value="{{deckname}}">X</button>
+            </form>
+        </div>
+        <div class="card-container">
+            <div class="display-card">
+                {% for i in range(fronts|length) %}
+                    <div class="card">
+                        <div class="front-text">{{fronts[i]}}</div>
+                        <div class="card-btn">
+                            <form action="/editpage" method="post">
+                                <input type="hidden" value="{{card_ids[i]}}" name="card_id">
+                                <button type="submit">Edit</button>
+                            </form>
+                            <form action="/deletecard" method="post">
+                                <input type="hidden" value="{{box_id}}" name="box_id">
+                                <input type="hidden" value="{{deck_id}}" name="deck_id">
+                                <input type="hidden" value="{{card_ids[i]}}" name="card_id">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

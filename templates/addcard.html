@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Add Cards
+{% endblock %}
+
+{% block main %}
+    <div id="x">
+        <form action="/open" method="post" class="control-deck">
+            <button type="submit" name="open" value="{{deckname}}">X</button>
+        </form>
+    </div>
+    <div id="addcard_container">
+        <form action="/addcard" method="post" id="addform">
+            <label for="long-text" style="font-size: 22px;">Add Card</label>
+            <textarea id="front" name="front" rows="12" cols="100" placeholder="Front Side" autofocus></textarea>
+            <textarea id="back" name="back" rows="12" cols="100" placeholder="Back side" autofocus></textarea>
+            <button type="submit" value= "{{deck_id}}" name="deck_id">Submit</button>
+        </form>
+    </div>
+    
+{% endblock %}
